@@ -9,6 +9,7 @@
 	--clr-Green: hsl(166, 89%, 52%);
 	--clr-gray: hsl(0, 0%, 80%);
 	--clr-white: hsl(0, 0%, 100%);
+	--clr-blue: hsl(240, 45%, 62%);
 }
 body {
 	font-family: Georgia, 'Times New Roman', Times, serif;
@@ -19,23 +20,30 @@ body {
 	grid-template-columns: repeat();
 	max-width: 1440px;
 	margin: 0 auto;
+	padding: 5% 3%;
 }
 /*==========Cards=============*/
 .card-1 {
 	background-color: var(--clr-Orange);
 }
 .card-2 {
-	background-color: var(--clr-Orange);
+	background-color: var(--clr-Green);
 }
 .card-3 {
-	background-color: var(--clr-Orange);
+	background-color: var(--clr-blue);
 }
 .card-4 {
-	background-color: var(--clr-Orange);
+	background-color: var(--clr-gray);
 }
 .card-5 {
 	background-color: var(--clr-Orange);
 }
 .card-6 {
 	background-color: var(--clr-white);
+}
+
+/*========Item=====*/
+.item {
+	margin-bottom: 20px;
+	padding: 20px;
 }
