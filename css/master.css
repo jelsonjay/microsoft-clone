@@ -1,0 +1,41 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root {
+	--clr-bg: hsl(166, 68%, 85%);
+	--clr-Orange: hsl(16, 100%, 66%);
+	--clr-Green: hsl(166, 89%, 52%);
+	--clr-gray: hsl(0, 0%, 80%);
+	--clr-white: hsl(0, 0%, 100%);
+}
+body {
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	background-color: var(--clr-bg);
+}
+.container {
+	display: grid;
+	grid-template-columns: repeat();
+	max-width: 1440px;
+	margin: 0 auto;
+}
+/*==========Cards=============*/
+.card-1 {
+	background-color: var(--clr-Orange);
+}
+.card-2 {
+	background-color: var(--clr-Orange);
+}
+.card-3 {
+	background-color: var(--clr-Orange);
+}
+.card-4 {
+	background-color: var(--clr-Orange);
+}
+.card-5 {
+	background-color: var(--clr-Orange);
+}
+.card-6 {
+	background-color: var(--clr-white);
+}
