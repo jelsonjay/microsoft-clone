@@ -1,2 +1,2 @@
 # microsoft-clone
- microsoft clone usin css grid layout 
+ microsoft clone usin css flex-box layout 
