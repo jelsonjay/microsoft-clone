@@ -9,8 +9,8 @@
 	--clr-Green: hsl(166, 89%, 52%);
 	--clr-gray: hsl(0, 0%, 80%);
 	--clr-white: hsl(1, 5%, 95%);
-	--clr-blue: hsl(240, 45%, 62%);
-	--clr-skyblue: hsl(197, 71%, 73%);
+	--clr-blue: hsl(210, 45%, 72%);
+	--clr-skyblue: hsl(197, 71%, 83%);
 	--clr-font: #cfcfcf;
 	--clr-font-primary: #48556a;
 }
@@ -18,6 +18,41 @@ body {
 	font-family: Georgia, 'Times New Roman', Times, serif;
 	background-color: var(--clr-bg);
 }
+/*==========Navbar=============*/
+header {
+	background-color: var(--clr-skyblue);
+	text-align: center;
+	position: relative;
+	width: 100%;
+	z-index: 999;
+}
+nav {
+	position: absolute;
+	text-align: left;
+	top: 100%;
+	left: 0;
+	background-color: var(--clr-skyblue);
+	width: 100%;
+}
+nav ul {
+	margin: 0;
+	list-style: none;
+}
+nav li {
+	margin-bottom: 1em;
+	margin-left: 1em;
+}
+nav a {
+	color: var(--clr-white);
+	text-decoration: none;
+	font-size: 1.5rem;
+	text-transform: capitalize;
+}
+nav a:hover {
+	background-color: var(--clr-Orange);
+}
+
+/*==========Cards=============*/
 .container {
 	display: grid;
 	grid-template-columns: repeat();
@@ -25,7 +60,7 @@ body {
 	margin: 0 auto;
 	padding: 5% 3%;
 }
-/*==========Cards=============*/
+/*---------Cards------*/
 .card-1 {
 	background-color: var(--clr-white);
 }
@@ -69,16 +104,17 @@ body {
 	border: 1px solid var(--clr-Orange);
 }
 .content-text p {
-	opacity: 100%;
+	opacity: 50%;
 	font-size: 0.9rem;
 }
 .content .name-text {
-	opacity: 50%;
+	opacity: 100%;
 	font-size: 1rem;
 }
 .item h4 {
 	margin-bottom: 1.25rem;
-	font-size: 1.5rem;
+	font-size: 1.2rem;
+	font-weight: 500;
 }
 /*========Media Query=====*/
 @media (min-width: 576px) {
