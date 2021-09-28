@@ -5,6 +5,7 @@
 }
 :root {
 	--clr-bg: hsl(6, 0%, 95%);
+	--clr-black: hsl(1, 5%, 10%);
 	--clr-Orange: hsl(16, 100%, 66%);
 	--clr-Green: hsl(166, 89%, 52%);
 	--clr-gray: hsl(0, 0%, 80%);
@@ -20,20 +21,61 @@ body {
 }
 /*==========Navbar=============*/
 header {
-	background-color: var(--clr-skyblue);
+	background-color: var(--clr-black);
 	text-align: center;
 	position: relative;
 	width: 100%;
 	z-index: 999;
 }
+.logo {
+	color: var(--clr-white);
+}
 nav {
 	position: absolute;
+	background-color: var(--clr-skyblue);
+	width: 100%;
 	text-align: left;
 	top: 100%;
 	left: 0;
-	background-color: var(--clr-skyblue);
-	width: 100%;
+	transform: scale(1, 0);
+	transform-origin: top;
+	transition: transform 400ms ease-in-out;
 }
+.toggle-menu {
+	display: none;
+}
+.toggle-label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-left: 1em;
+	cursor: pointer;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+.toggle-label span,
+.toggle-label span::before,
+.toggle-label span::after {
+	display: block;
+	background-color: var(--clr-white);
+	height: 2px;
+	width: 2em;
+	border-radius: 0.5rem;
+	position: relative;
+}
+.toggle-label span::before,
+.toggle-label span::after {
+	content: '';
+	position: absolute;
+}
+.toggle-label span::before {
+	bottom: 8px;
+}
+.toggle-label span::after {
+	top: 8px;
+}
+
 nav ul {
 	margin: 0;
 	list-style: none;
@@ -47,9 +89,20 @@ nav a {
 	text-decoration: none;
 	font-size: 1.5rem;
 	text-transform: capitalize;
+	opacity: 0;
+	transition: opacity 1ms ease-in-out;
 }
 nav a:hover {
 	background-color: var(--clr-Orange);
+	padding: 8px;
+	border-radius: 0.5rem;
+}
+.toggle-menu:checked ~ nav {
+	transform: scale(1, 1);
+}
+.toggle-menu:checked ~ nav a {
+	opacity: 1;
+	transition: opacity 3ms ease-in-out 3ms;
 }
 
 /*==========Cards=============*/
@@ -116,7 +169,7 @@ nav a:hover {
 	font-size: 1.2rem;
 	font-weight: 500;
 }
-/*========Media Query=====*/
+/*========Media Query Cards=====*/
 @media (min-width: 576px) {
 	.container,
 	.grid-left,
@@ -155,5 +208,11 @@ nav a:hover {
 	}
 	.card-4 {
 		flex-basis: 65%;
+	}
+}
+/*========Media Query Navbar=====*/
+@media screen and (min-width: 800px) {
+	.toggle-label {
+		display: none;
 	}
 }
