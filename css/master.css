@@ -5,6 +5,7 @@
 }
 :root {
 	--clr-bg: hsl(6, 0%, 95%);
+	--clr-sidebar: hsla(219, 78%, 28%, 0.568);
 	--clr-black: hsl(1, 5%, 10%);
 	--clr-Orange: hsl(16, 100%, 66%);
 	--clr-Green: hsl(166, 89%, 52%);
@@ -16,25 +17,29 @@
 	--clr-font-primary: #48556a;
 }
 body {
-	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	background-color: var(--clr-bg);
 }
 /*==========Navbar=============*/
 header {
 	background-color: var(--clr-black);
 	text-align: center;
-	position: relative;
+	position: fixed;
 	width: 100%;
 	z-index: 999;
+
+	align-items: center;
 }
 .logo {
 	color: var(--clr-white);
 }
 nav {
 	position: absolute;
-	background-color: var(--clr-skyblue);
+	background-color: var(--clr-black);
 	width: 100%;
-	text-align: left;
+	min-height: 100%;
+	padding: 40px;
+	text-align: center;
 	top: 100%;
 	left: 0;
 	transform: scale(1, 0);
@@ -79,6 +84,7 @@ nav {
 nav ul {
 	margin: 0;
 	list-style: none;
+	padding: 20px;
 }
 nav li {
 	margin-bottom: 1em;
@@ -87,16 +93,16 @@ nav li {
 nav a {
 	color: var(--clr-white);
 	text-decoration: none;
-	font-size: 1.5rem;
+	font-size: 1rem;
 	text-transform: capitalize;
 	opacity: 0;
 	transition: opacity 1ms ease-in-out;
 }
-nav a:hover {
+/* nav a:hover {
 	background-color: var(--clr-Orange);
 	padding: 8px;
 	border-radius: 0.5rem;
-}
+} */
 .toggle-menu:checked ~ nav {
 	transform: scale(1, 1);
 }
@@ -111,7 +117,7 @@ nav a:hover {
 	grid-template-columns: repeat();
 	max-width: 1440px;
 	margin: 0 auto;
-	padding: 5% 3%;
+	padding: 10% 3%;
 }
 /*---------Cards------*/
 .card-1 {
@@ -181,6 +187,7 @@ nav a:hover {
 	#bottom {
 		flex-basis: 50%;
 	}
+
 	.container {
 		display: flex;
 		max-width: 1400px;
@@ -211,8 +218,49 @@ nav a:hover {
 	}
 }
 /*========Media Query Navbar=====*/
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 576px) {
 	.toggle-label {
 		display: none;
+	}
+	header {
+		display: grid;
+		grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+	}
+	.logo {
+		grid-column: 2 / 3;
+	}
+	nav {
+		all: unset;
+		grid-column: 3 / 4;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+	nav ul {
+		display: flex;
+	}
+	nav li {
+		margin-left: 3em;
+		margin-bottom: 0;
+	}
+	nav a {
+		opacity: 1;
+		position: relative;
+	}
+	nav a::before {
+		content: '';
+		background-color: var(--clr-Orange);
+		display: block;
+		height: 3px;
+		bottom: -0.45em;
+		position: absolute;
+		left: 0;
+		right: 0;
+		transform: scale(0, 1);
+		transform-origin: left;
+		transition: trnsform ease-in-out 250ms;
+	}
+	nav a:hover::before {
+		transform: scale(1, 1);
 	}
 }
